@@ -1,7 +1,7 @@
 # CPSC304-Project
 Postal Service Database
 
-We will be using PHP/Apache while implementing our database.
+We will be using PHP/Apache + MySQL while implementing our database.
 
 The domain that weare modeling is a mailing service domain, the kind of information that isstored in the database of a postal service.
 
