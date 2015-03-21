@@ -1,7 +1,6 @@
 # CPSC304-Project
 Postal Service Database
 
-- Formal Specifications:
 We will be using CSUgrad Oracle Installation and provided PHP/Apache while implementing ourdatabase.
 
 The domain that weare modeling is a mailing service domain, the kind of information that isstored in the database of a postal service.
