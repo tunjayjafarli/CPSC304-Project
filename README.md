@@ -1,7 +1,7 @@
 # CPSC304-Project
 Postal Service Database
 
-We will be using CSUgrad Oracle Installation and provided PHP/Apache while implementing ourdatabase.
+We will be using PHP/Apache while implementing our database.
 
 The domain that weare modeling is a mailing service domain, the kind of information that isstored in the database of a postal service.
 
@@ -10,5 +10,3 @@ There will be twodifferent interfaces for two classes of users of the system: cu
 The specification ofthe mailing service we are designing stores information about Items(ItemNumber, Fee, Size), Offices (BranchNumber, Name, Location, PhoneNumber),Shipment (IssueNumber, TrackingNumber, Destination), shipmentMehtod(Express,Regular) and Payment (ReceiptNumber, Amount). A shipment will hold information about the item that is being sent, thedate that it is being sent on, shipment method and payment. Only RegularOffices can receive the shipment and process it. Storage type offices can onlystore items. Sent and not picked up items will be forwarded to storages.  
  
 Expected workdivision: We will all decide about the final form and functionalities of thesystem together. Team member Asif Mammadov will be doing most of the GUI work.Tunjay Jafarli and Rafael Malcolm will be dealing with implementation of systemfunctionalities. Tom Fung will be populating the databases. However, all ofthese is subject to change. If later on we realize that, member X has a lot ofwork to do while member Y has significantly less, the X’s work will be dividedinto smaller parts, and some of the parts will be handed in to Y to complete.This can happen while implementing the functionalities because sometimes theytend to be a lot more complicated than what you expect. We will be holdinggroup meetings to measure our progress, solve the arising issue/problems andhelp each other if necessary.
- 
-We might needhelp/feedback while using PHP/Apache because every team member is new to theconcepts.
