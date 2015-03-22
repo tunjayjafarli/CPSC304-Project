@@ -1,11 +1,12 @@
 <HTML>
 <BODY>
 <title>Postal Service Database</title>
-<h1>Home Page</h1>
-<h1>Branch Table</h1>
 <FORM>
 
 <?php
+
+Include("header.php");
+
 $servername = "localhost";
 $username = "root";
 $password = "";
