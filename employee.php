@@ -1,5 +1,7 @@
+
 <HTML>
 	<BODY>
+		<h1> EMPLOYEE</h1>
 		<?php
 		Include ("header.php");
 		Echo "This page is for EMPLOYEES ONLY!"
@@ -10,3 +12,4 @@
 		<a href="packages.php"> IN STORAGE PACKAGES </a>
 	</BODY>
 </HTML>
+
