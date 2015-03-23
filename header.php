@@ -6,6 +6,7 @@
 			
 		<TD><a href="header.php"> HOME </a></TD>
 		<TD><a href="branch.php"> BRANCHES </a></TD>
+		<TD><a href="customer.php"> CUSTOMER </a></TD>
 
 		</TR> 
 		</TABLE>
