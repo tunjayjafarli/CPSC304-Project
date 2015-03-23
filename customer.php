@@ -24,6 +24,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 
+
 $dbname = "PostalService";
 
 // Create connection
@@ -87,3 +88,4 @@ if(array_key_exists('ChangeDeliveryMethod', $_POST)){
 mysqli_close($conn);
 
 ?>
+
