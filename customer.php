@@ -9,8 +9,9 @@ $dbname = "project";
 
 ?>
 <h2>Delivery Status</h2>
-<form> Issue Number: <input type="text" name="issuenumber">
-
-
+<form> 
+	Issue Number: <input type="text" name="issuenumber">
+	<input type="submit">
 </form>
+
 <h2> Change Delivery Method </h2>
