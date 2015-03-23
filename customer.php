@@ -1,4 +1,5 @@
 
+
 <?php
 include ("header.php");
 ?>
@@ -27,6 +28,14 @@ include ("header.php");
    	<input type="radio" name="method" value="express">Express
 	<input type="submit" name="ChangeDeliveryMethod">
 </form>
+
+=======
+<h2>Delivery Status</h2>
+<form> 
+	Issue Number: <input type="text" name="issuenumber">
+	<input type="submit" name="GetInfo">
+</form>
+
 
 <?php
 $servername = "localhost";
@@ -96,6 +105,8 @@ if(array_key_exists('ChangeDeliveryMethod', $_POST)){
 mysqli_close($conn);
 
 
+
 ?>
+
 
 
