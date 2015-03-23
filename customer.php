@@ -18,8 +18,13 @@ include ("header.php");
 
 <h1><center> CUSTOMER </center></h1>
 
-<?php
+<h2>Delivery Status</h2>
+<form> 
+	Issue Number: <input type="text" name="issuenumber">
+	<input type="submit" name="GetInfo">
+</form>
 
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -86,6 +91,7 @@ if(array_key_exists('ChangeDeliveryMethod', $_POST)){
 }
 
 mysqli_close($conn);
+
 
 ?>
 
