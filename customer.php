@@ -1,3 +1,4 @@
+
 <?php
 include ("header.php");
 ?>
@@ -15,11 +16,14 @@ include ("header.php");
 	<input type="submit" name="ChangeDeliveryMethod">
 </form>
 
+<h1><center> CUSTOMER </center></h1>
+
 <?php
 
 $servername = "localhost";
 $username = "root";
 $password = "";
+
 $dbname = "PostalService";
 
 // Create connection
