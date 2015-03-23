@@ -11,7 +11,7 @@ if (!$conn) {
 }
 
 // Create database
-$sql = "CREATE DATABASE project";
+$sql = "CREATE DATABASE PostalService";
 
 if (mysqli_query($conn, $sql)) {
     echo "Database created successfully";
