@@ -3,6 +3,18 @@
 include ("header.php");
 ?>
 
+<h1><center> CUSTOMER </center></h1>
+
+<TABLE border=0 height=10% width=100% bgcolor="lightgrey">
+		<TR>
+			
+		<TD><a href="header.php"> HOME </a></TD>
+		<TD><a href="branch.php"> BRANCHES </a></TD>
+		<TD><a href="customer.php"> CUSTOMER </a></TD>
+		<TD><a href="employee.php"> EMPLOYEE </a></TD>
+
+		</TR> 
+</TABLE>
 <h2>Delivery Status</h2>
 <form method="POST" action="customer.php"> 
 	Issue Number: <input type="text" name="issuenumber">
@@ -16,20 +28,10 @@ include ("header.php");
 	<input type="submit" name="ChangeDeliveryMethod">
 </form>
 
-<h1><center> CUSTOMER </center></h1>
-
-<h2>Delivery Status</h2>
-<form> 
-	Issue Number: <input type="text" name="issuenumber">
-	<input type="submit" name="GetInfo">
-</form>
-
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
-
-
 $dbname = "PostalService";
 
 // Create connection
