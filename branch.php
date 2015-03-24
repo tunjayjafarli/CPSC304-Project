@@ -10,7 +10,7 @@ Include("header.php");
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "project";
+$dbname = "PostalService";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
