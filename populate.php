@@ -73,7 +73,7 @@ $sql5 = "INSERT INTO Item(itemnumber, size, type) VALUES ('1', 'S', 'Letter')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql5)) {
-	echo "New record(s) successfully added to Branch Table";
+	echo "New record(s) successfully added to Item Table";
 } else {
 	echo "Error: " . $sql5 . "<br>" . mysqli_error($conn);
 }
@@ -83,7 +83,7 @@ $sql6 = "INSERT INTO Item(itemnumber, size, type) VALUES ('2', 'L', 'Package')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql6)) {
-	echo "New record(s) successfully added to Branch Table";
+	echo "New record(s) successfully added to Item Table";
 } else {
 	echo "Error: " . $sql6 . "<br>" . mysqli_error($conn);
 }
@@ -93,7 +93,7 @@ $sql7 = "INSERT INTO Item(itemnumber, size, type) VALUES ('3', 'M', 'Package')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql7)) {
-	echo "New record(s) successfully added to Branch Table";
+	echo "New record(s) successfully added to Item Table";
 } else {
 	echo "Error: " . $sql7 . "<br>" . mysqli_error($conn);
 }
@@ -103,7 +103,7 @@ $sql8 = "INSERT INTO Item(itemnumber, size, type) VALUES ('4', 'S', 'Letter')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql8)) {
-	echo "New record(s) successfully added to Branch Table";
+	echo "New record(s) successfully added to Item Table";
 } else {
 	echo "Error: " . $sql8 . "<br>" . mysqli_error($conn);
 }
@@ -113,7 +113,7 @@ $sql9 = "INSERT INTO Item(itemnumber, size, type) VALUES ('5', 'L', 'Package')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql9)) {
-	echo "New record(s) successfully added to Branch Table";
+	echo "New record(s) successfully added to Item Table";
 } else {
 	echo "Error: " . $sql9 . "<br>" . mysqli_error($conn);
 }
@@ -124,7 +124,7 @@ $sql10 = "INSERT INTO In_storage(itemnumber, branchid) VALUES ('1', '103')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql10)) {
-	echo "New record(s) successfully added to Packages Table";
+	echo "New record(s) successfully added to In_storage Table";
 } else {
 	echo "Error: " . $sql10 . "<br>" . mysqli_error($conn);
 }
@@ -134,7 +134,7 @@ $sql11 = "INSERT INTO In_storage(itemnumber, branchid) VALUES ('2', '103')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql11)) {
-	echo "New record(s) successfully added to Packages Table";
+	echo "New record(s) successfully added to In_storage Table";
 } else {
 	echo "Error: " . $sql11 . "<br>" . mysqli_error($conn);
 }
@@ -147,7 +147,7 @@ VALUES ('11','1001','Baku, Azerbaijan','100','1')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql12)) {
-	echo "New record(s) successfully added to Shipment Table";
+	echo "New record(s) successfully added to Officereceived Table";
 } else {
 	echo "Error: " . $sql12 . "<br>" . mysqli_error($conn);
 }
@@ -158,7 +158,7 @@ VALUES ('22','2002','Toronto, Canada','102','2')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql13)) {
-	echo "New record(s) successfully added to Shipment Table";
+	echo "New record(s) successfully added to Officereceived Table";
 } else {
 	echo "Error: " . $sql13 . "<br>" . mysqli_error($conn);
 }
@@ -170,7 +170,7 @@ VALUES ('33','3003','California, US','100','3')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql14)) {
-	echo "New record(s) successfully added to Shipment Table";
+	echo "New record(s) successfully added to Officereceived Table";
 } else {
 	echo "Error: " . $sql14 . "<br>" . mysqli_error($conn);
 }
@@ -182,7 +182,7 @@ VALUES ('44','4004','Ottawa, CA','104','4')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql15)) {
-	echo "New record(s) successfully added to Shipment Table";
+	echo "New record(s) successfully added to Officereceived Table";
 } else {
 	echo "Error: " . $sql15 . "<br>" . mysqli_error($conn);
 }
@@ -194,7 +194,7 @@ VALUES ('55','5005','London, UK','105','5')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql16)) {
-	echo "New record(s) successfully added to Shipment Table";
+	echo "New record(s) successfully added to Officereceived Table";
 } else {
 	echo "Error: " . $sql16 . "<br>" . mysqli_error($conn);
 }
