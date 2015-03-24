@@ -1,4 +1,5 @@
 <HTML>
+	<link rel="stylesheet" href="bootstap.css">
 	<BODY>
 		<h1 style="color:red"><center>Postal Service Database</center></h1>
 		<TABLE border=0 height=10% width=100% bgcolor="blue">
