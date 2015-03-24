@@ -1,5 +1,4 @@
 
-
 <HTML>
 	<BODY>
 		<h1><center>EMPLOYEE</center></h1>
@@ -22,6 +21,7 @@
 <h2>Check Shipment Information</h2>
 <h2>Storage Office Management</h2>
 <?php
+
 Include ("header.php");
 		Echo "This page is for EMPLOYEES ONLY!"
 		?>
@@ -140,5 +140,7 @@ Echo "</Table>";
 mysqli_close($conn);
 
 ?>
+
 	</BODY>
 </HTML>
+
