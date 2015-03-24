@@ -13,10 +13,9 @@ if (!$conn) {
 
 // Create  sql tables
 
-//Branch Tabel
+//Create Branch Table
 $sql = "CREATE TABLE Branch (branchid int PRIMARY KEY, phone int(10) NOT NULL, 
-	name varchar(30) NOT NULL, 
-	location varchar(30) NOT NULL)";
+	name varchar(30) NOT NULL, location varchar(30) NOT NULL)";
 
 if (mysqli_query($conn, $sql)) {
 	echo "Table Branch created successfully";
@@ -25,8 +24,8 @@ if (mysqli_query($conn, $sql)) {
 }
 echo "<br>";
 
-// Item Table
-$sql1 = "CREATE TABLE Item (itemnumber int PRIMARY KEY, fee DOUBLE NOT NULL, size char(1), type varchar(10))";
+//Create Item Table
+$sql1 = "CREATE TABLE Item (itemnumber int PRIMARY KEY, size char(1), type varchar(10))";
 
 if (mysqli_query($conn, $sql1)) {
 	echo "Table Item created successfully";
@@ -35,57 +34,44 @@ if (mysqli_query($conn, $sql1)) {
 }
 echo "<br>";
 
-// Packages Table
-$sql2 = "CREATE TABLE Packages (itemnumber int PRIMARY key, branchid int NOT NULL, 
+//Create In_storage Table
+$sql2 = "CREATE TABLE In_storage (itemnumber int PRIMARY key, branchid int NOT NULL, 
 	FOREIGN KEY (branchid) REFERENCES Branch(branchid))";
 
 if (mysqli_query($conn, $sql2)) {
-	echo "Table Packages created successfully";
+	echo "Table In_storage created successfully";
 } else {
 	echo "Error creating table: " . mysqli_error($conn);
 }
 echo "<br>";
 
-// Shipment table
-$sql3 = "CREATE TABLE Shipment(issuenumber int PRIMARY KEY , trackingnumber int, destination varchar(30),
-	branchid int, itemnumber int, 
-	UNIQUE (trackingnumber),
-	FOREIGN KEY(branchid) REFERENCES Branch(branchid),
-	FOREIGN KEY(itemnumber) REFERENCES Item(itemnumber))"; 
 
-if (mysqli_query($conn, $sql3)) {
-	echo "Table Shipment created successfully";
-} else {
-	echo "Error creating table: " . mysqli_error($conn);
-}
-echo "<br>";
-
-//HasShipmentMethod Table
-$sql4 = "CREATE TABLE HasShipmentMethod (issuenumber int PRIMARY KEY , fee DOUBLE NOT NULL, 
-	duration varchar(30), method varchar(30), 
-	FOREIGN KEY (issuenumber) REFERENCES Shipment(issuenumber))";
-
+//Create OfficeReceived Table
+$sql4 = "CREATE Table OfficeReceived(issuenumber int PRIMARY KEY, trackingnumber int UNIQUE, destination varchar(30),
+	branchid int NOT NULL, itemnumber int UNIQUE, 
+	FOREIGN KEY (branchid) REFERENCES Branch(branchid))";
 if (mysqli_query($conn, $sql4)) {
-	echo "Table HasShipmentMethod created successfully";
-} else {
-	echo "Error creating table: " . mysqli_error($conn);
-}
-echo "<br>";
-
-//OfficeReceived Table
-$sql5 = "CREATE Table OfficeReceived(branchid int PRIMARY key, issuenumber int NOT NULL,
-	FOREIGN KEY (issuenumber) REFERENCES Shipment(issuenumber))";
-if (mysqli_query($conn, $sql5)) {
 	echo "Table OfficeReceived created successfully";
 } else {
 	echo "Error creating table: " . mysqli_error($conn);
 }
 echo "<br>";
 
-//Mailed Table 
-$sql6 = "CREATE Table Mailed(branchid int NOT NULL, issuenumber int PRIMARY KEY, deliverystatus varchar(10), receiverstatus varchar(10),
+//Create HasShipmentMethod Table
+$sql5 = "CREATE TABLE HasShipmentMethod (issuenumber int NOT NULL UNIQUE, duration varchar(30), method varchar(30), 
+	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber))";
+
+if (mysqli_query($conn, $sql5)) {
+	echo "Table HasShipmentMethod created successfully";
+} else {
+	echo "Error creating table: " . mysqli_error($conn);
+}
+echo "<br>";
+
+//Create Mailed Table 
+$sql6 = "CREATE Table Mailed(branchid int NOT NULL, issuenumber int PRIMARY KEY, deliverystatus varchar(20), receiverstatus varchar(20),
 	FOREIGN KEY (branchid) REFERENCES Branch(branchid),
-	FOREIGN KEY (issuenumber) REFERENCES Shipment(issuenumber))";
+	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber))";
 
 if (mysqli_query($conn, $sql6)) {
 	echo "Table Mailed created successfully";
@@ -94,9 +80,9 @@ if (mysqli_query($conn, $sql6)) {
 }
 echo "<br>";
 
-//Date_ table
+//Create Date_ table
 $sql7 = "CREATE Table Date_(issuenumber int PRIMARY KEY, day int NOT NULL, month varchar(10) NOT NULL, year int NOT NULL,
-	FOREIGN KEY (issuenumber) REFERENCES Shipment(issuenumber))";
+	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber))";
 
 if (mysqli_query($conn, $sql7)) {
 	echo "Table Date_ created successfully";
@@ -105,9 +91,9 @@ if (mysqli_query($conn, $sql7)) {
 }
 echo "<br>";
 
-//Paid Table
+//Create Paid Table
 $sql8 = "CREATE Table Paid(receiptnumber int PRIMARY KEY, issuenumber int NOT NULL, amount int, ptype varchar(12), holdername varchar(30),
-	cardnumber int UNIQUE, stype varchar(10))";
+	cardnumber int(10) UNIQUE, stype varchar(15))";
 
 if (mysqli_query($conn, $sql8)) {
 	echo "Table Paid created successfully";
