@@ -19,6 +19,9 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+Echo "LIST OF BRANCHES: ";
+
+// Insert functionality
 if (isset($_GET['Submit'])) {
 	$branchid = $_GET['branchid'];
 	$phone = $_GET['phone'];
@@ -27,9 +30,10 @@ if (isset($_GET['Submit'])) {
 
 	mysqli_query($conn, "insert into Branch value 
 		('$branchid', '$phone', '$name', '$location')");
-	echo "Values inserted successfully";
+	echo "New values inserted successfully";
 }
 
+// Select functionality
 $sql = "Select * from Branch";
 $result = mysqli_query($conn, $sql);
 
@@ -58,6 +62,8 @@ Echo "</Table>";
 mysqli_close($conn);
 
 ?>
+
+<a href="packages.php"> LIST OF IN STORAGE PACKAGES </a>
 
 </HTML>
 </BODY>
