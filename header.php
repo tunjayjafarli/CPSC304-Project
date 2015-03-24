@@ -4,8 +4,8 @@
 		<TABLE border=0 height=10% width=100% bgcolor="blue">
 			<TR>
 
-				<TD><a href="header.php"> HOME </a></TD>
-				<TD><a href="branch.php"> BRANCHES </a></TD>
+				<TD><a href="header.php"> CUSTOMER </a></TD>
+				<TD><a href="employee.php"> EMPLOYEE </a></TD>
 
 			</TR> 
 		</TABLE>
