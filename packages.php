@@ -46,7 +46,7 @@ if (isset($_GET['Delete'])) {
 $sql = "Select * from In_storage";
 $packages = mysqli_query($conn, $sql);
 
-Echo "<Table border=1>";
+Echo "<Table  class=table>";
 Echo "<TR><TD>Item ID</TD>
 		  <TD>Branch ID</TD>
 		  <TD><Input type=Submit name='Delete' value='Delete'></TD></TR>";
