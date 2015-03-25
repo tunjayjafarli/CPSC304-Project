@@ -1,10 +1,4 @@
-<HTML>
-<BODY>
-<title>Postal Service Database</title>
-<FORM>
-
 <?php
-
 Include("header.php");
 
 $servername = "localhost";
@@ -37,7 +31,7 @@ if (isset($_GET['Submit'])) {
 $sql = "Select * from Branch";
 $result = mysqli_query($conn, $sql);
 
-Echo "<Table border=1>";
+Echo "<Table border=1 class=table>";
 Echo "<TR><TD>Branch ID</TD>
 		  <TD>Phone</TD>
 		  <TD>Name</TD>
@@ -61,10 +55,6 @@ Echo "</Table>";
 
 mysqli_close($conn);
 
+echo "<a href=packages.php> LIST OF IN STORAGE PACKAGES </a>"; 
+
 ?>
-
-<a href="packages.php"> LIST OF IN STORAGE PACKAGES </a>
-
-</HTML>
-</BODY>
-</FORM>

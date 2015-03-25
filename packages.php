@@ -1,10 +1,5 @@
-<HTML>
-<BODY>
-<title>Postal Service Database</title>
-<FORM>
-
 <?php
-
+echo "<title>Postal Service Database</title>";
 Include ("header.php");
 
 $servername = "localhost";
@@ -72,9 +67,6 @@ Echo "</Table>";
 
 mysqli_close($conn);
 
-?>
+echo "<a href=branch.php> BRANCHES </a>";
 
-<a href="branch.php"> BRANCHES </a>
-</HTML>
-</BODY>
-</FORM>
+?>
