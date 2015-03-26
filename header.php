@@ -9,7 +9,7 @@
 		<TABLE class="table">
 			<TR>
 
-				<TD><a href="header.php"> CUSTOMER </a></TD>
+				<TD><a href="customer.php"> CUSTOMER </a></TD>
 				<TD><a href="index.php"> EMPLOYEE </a></TD>
 
 			</TR> 
