@@ -1,3 +1,6 @@
+
+<form method="POST" action="branch.php"> 
+
 <?php
 Include("header.php");
 
@@ -16,11 +19,11 @@ if (!$conn) {
 Echo "LIST OF BRANCHES: ";
 
 // Insert functionality
-if (isset($_GET['Submit'])) {
-	$branchid = $_GET['branchid'];
-	$phone = $_GET['phone'];
-	$name = $_GET['name'];
-	$location = $_GET['location'];
+if (isset($_POST['Submit'])) {
+	$branchid = $_POST['branchid'];
+	$phone = $_POST['phone'];
+	$name = $_POST['name'];
+	$location = $_POST['location'];
 
 	mysqli_query($conn, "insert into Branch value 
 		('$branchid', '$phone', '$name', '$location')");

@@ -425,5 +425,40 @@ if (mysqli_query($conn, $sql36)) {
 echo "<br>";
 
 
+// Add record(s) to login table
+$sql37 = "INSERT INTO login (id, username, password) VALUES ('1', 'asifmammadov', 'UBC1')";
+
+// Check if added successfully
+if (mysqli_query($conn, $sql37)) {
+	echo "New record(s) successfully added to login Table";
+} else {
+	echo "Error: " . $sql37 . "<br>" . mysqli_error($conn);
+}
+echo "<br>";
+
+// Add record(s) to login table
+$sql38 = "INSERT INTO login (id, username, password) VALUES ('2', 'tunjayjafarli', 'UBC2')";
+
+// Check if added successfully
+if (mysqli_query($conn, $sql38)) {
+	echo "New record(s) successfully added to login Table";
+} else {
+	echo "Error: " . $sql38 . "<br>" . mysqli_error($conn);
+}
+
+echo "<br>";
+
+// Add record(s) to login table
+$sql39 = "INSERT INTO login (id, username, password) VALUES ('3', 'tomfung', 'UBC3')";
+
+// Check if added successfully
+if (mysqli_query($conn, $sql39)) {
+	echo "New record(s) successfully added to login Table";
+} else {
+	echo "Error: " . $sql39 . "<br>" . mysqli_error($conn);
+}
+
+echo "<br>";
+
 mysqli_close($conn);
 ?>

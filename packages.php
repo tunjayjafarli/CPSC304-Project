@@ -1,3 +1,5 @@
+<form method="POST" action="packages.php"> 
+
 <?php
 echo "<title>Postal Service Database</title>";
 Include ("header.php");
@@ -14,13 +16,13 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-Echo "LIST OF IN STORAGE PACKAGES: ";
+Echo "Packages in Storage: ";
 Echo "<br>";
 
 // Insert functionality
-if (isset($_GET['Submit'])) {
-	$itemnumber = $_GET['itemnumber'];
-	$branchid = $_GET['branchid'];
+if (isset($_POST['Submit'])) {
+	$itemnumber = $_POST['itemnumber'];
+	$branchid = $_POST['branchid'];
 
 	mysqli_query($conn, "insert into In_storage value 
 		('$itemnumber' ,'$branchid')");
@@ -28,12 +30,12 @@ if (isset($_GET['Submit'])) {
 }
 
 // Delete functionality
-if (isset($_GET['Delete'])) {
+if (isset($_POST['Delete'])) {
 	$sql = "Select * from In_storage";
 	$packages = mysqli_query($conn, $sql);
 
 	while ($array=mysqli_fetch_array($packages)) {
-		$a = isset($_GET[$array[0]]);
+		$a = isset($_POST[$array[0]]);
 		if ($a>=1) {
 			mysqli_query($conn, "delete from In_storage where itemnumber = $array[0]");
 			echo "Deleted item number: ". $array[0];
@@ -46,7 +48,7 @@ if (isset($_GET['Delete'])) {
 $sql = "Select * from In_storage";
 $packages = mysqli_query($conn, $sql);
 
-Echo "<Table border=1>";
+Echo "<Table class=table>";
 Echo "<TR><TD>Item ID</TD>
 		  <TD>Branch ID</TD>
 		  <TD><Input type=Submit name='Delete' value='Delete'></TD></TR>";
