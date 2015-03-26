@@ -20,15 +20,11 @@
 </form>
 <h2>Check Shipment Information</h2>
 <h2>Storage Office Management</h2>
+
 <?php
 
 Include ("header.php");
-		Echo "This page is for EMPLOYEES ONLY!"
-
-		<br> </br>
-		<a href="branch.php"> BRANCHES </a> 
-		<br> </br>
-		<a href="packages.php"> IN STORAGE PACKAGES </a>
+Echo "This page is for EMPLOYEES ONLY!";
 
 $servername = "localhost";
 $username = "root";
