@@ -9,7 +9,3 @@ Echo "<br/>
 <a href=logout.php class='btn btn-success'> LOG OUT</a> ";
 
 ?>
-
-		
-		
-		
