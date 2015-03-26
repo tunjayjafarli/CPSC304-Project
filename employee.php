@@ -24,7 +24,7 @@
 
 Include ("header.php");
 		Echo "This page is for EMPLOYEES ONLY!"
-		?>
+
 		<br> </br>
 		<a href="branch.php"> BRANCHES </a> 
 		<br> </br>
