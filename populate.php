@@ -1,4 +1,7 @@
 <?php
+
+include ("management.php");
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -202,8 +205,8 @@ echo "<br>";
 
 
 // Add record to HasShipmentMethod table
-$sql17 = "INSERT INTO HasShipmentMethod(issuenumber, duration, method)
-VALUES ('11' ,'15 business days', 'regular')";
+$sql17 = "INSERT INTO HasShipmentMethod(issuenumber, days, method)
+VALUES ('11' ,'15', 'regular')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql17)) {
@@ -213,8 +216,8 @@ if (mysqli_query($conn, $sql17)) {
 }
 echo "<br>";
 
-$sql18 = "INSERT INTO HasShipmentMethod(issuenumber, duration, method)
-VALUES ('22', '15 business days', 'regular')";
+$sql18 = "INSERT INTO HasShipmentMethod(issuenumber, days, method)
+VALUES ('22', '15', 'regular')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql18)) {
@@ -224,8 +227,8 @@ if (mysqli_query($conn, $sql18)) {
 }
 echo "<br>";
 
-$sql19 = "INSERT INTO HasShipmentMethod(issuenumber, duration, method)
-VALUES ('33', '3 business days', 'express')";
+$sql19 = "INSERT INTO HasShipmentMethod(issuenumber, days, method)
+VALUES ('33', '3', 'express')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql19)) {
@@ -235,8 +238,8 @@ if (mysqli_query($conn, $sql19)) {
 }
 echo "<br>";
 
-$sql20 = "INSERT INTO HasShipmentMethod(issuenumber, duration, method)
-VALUES ('44', '5 business days', 'regular')";
+$sql20 = "INSERT INTO HasShipmentMethod(issuenumber, days, method)
+VALUES ('44', '5', 'regular')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql20)) {
@@ -246,8 +249,8 @@ if (mysqli_query($conn, $sql20)) {
 }
 echo "<br>";
 
-$sql21 = "INSERT INTO HasShipmentMethod(issuenumber, duration, method)
-VALUES ('55', '6 business days', 'express')";
+$sql21 = "INSERT INTO HasShipmentMethod(issuenumber, days, method)
+VALUES ('55', '6', 'express')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql21)) {

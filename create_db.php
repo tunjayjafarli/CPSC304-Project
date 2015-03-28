@@ -1,4 +1,7 @@
 <?php
+
+include ("management.php");
+
 $servername = "localhost";
 $username = "root";
 $password = "";

@@ -1,4 +1,7 @@
 <?php
+
+include ("management.php");
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -63,7 +66,7 @@ if (mysqli_query($conn, $sql4)) {
 echo "<br>";
 
 //Create HasShipmentMethod Table
-$sql5 = "CREATE TABLE HasShipmentMethod (issuenumber int NOT NULL UNIQUE, duration varchar(30), method varchar(30), 
+$sql5 = "CREATE TABLE HasShipmentMethod (issuenumber int NOT NULL UNIQUE, days int, method varchar(30), 
 	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber))";
 
 //Check if created 
