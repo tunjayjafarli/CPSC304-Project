@@ -38,7 +38,7 @@ echo "<br>";
 
 //Create In_storage Table
 $sql2 = "CREATE TABLE In_storage (itemnumber int PRIMARY key, branchid int NOT NULL, 
-	FOREIGN KEY (branchid) REFERENCES Branch(branchid))";
+	FOREIGN KEY (branchid) REFERENCES Branch(branchid) ON DELETE CASCADE)";
 
 //Check if created 
 if (mysqli_query($conn, $sql2)) {
@@ -52,7 +52,7 @@ echo "<br>";
 //Create OfficeReceived Table
 $sql4 = "CREATE Table OfficeReceived(issuenumber int PRIMARY KEY, trackingnumber int UNIQUE, destination varchar(30),
 	branchid int NOT NULL, itemnumber int UNIQUE, 
-	FOREIGN KEY (branchid) REFERENCES Branch(branchid))";
+	FOREIGN KEY (branchid) REFERENCES Branch(branchid) ON DELETE CASCADE)";
 
 //Check if created 
 if (mysqli_query($conn, $sql4)) {
