@@ -30,8 +30,21 @@ if (isset($_POST['Update'])) {
 		echo "<p style=color:green> Updated the values for the branch: " . $branchid;
 	} else {
 		echo "<p style=color:red> Please check that you have entered a valid branch id! <br>";
+	}	
+}
+
+// Delete functionality
+if (isset($_POST['Delete'])) {
+	$sql = "Select * from Branch";
+	$branches = mysqli_query($conn, $sql);
+
+	while ($array=mysqli_fetch_array($branches)) {
+		$a = isset($_POST[$array[0]]);
+		if ($a>=1) {
+			mysqli_query($conn, "delete from Branch where branchid = $array[0]");
+			echo "<p style=color:red> Destroyed the branch: ". $array[0];
+		}
 	}
-	
 }
 
 // Select functionality
@@ -42,13 +55,15 @@ Echo "<Table border=1 class=table>";
 Echo "<TR><TD>Branch ID</TD>
 		  <TD>Phone</TD>
 		  <TD>Name</TD>
-		  <TD>Address</TD> </TR>";
+		  <TD>Address</TD>
+		  <TD><Input type=Submit name='Delete' value='Delete' class='btn btn-danger'></TD></TR>";
 if (mysqli_num_rows($result) > 0) {
 	while($array = mysqli_fetch_array($result)) {
 		echo "<TR><TD> $array[0] </TD>";
 		echo 	 "<TD> $array[1] </TD>";
 		echo 	 "<TD> $array[2] </TD>";
-		echo 	 "<TD> $array[3] </TD></TR>";
+		echo 	 "<TD> $array[3] </TD>";
+		echo     "<TD><Input type=Checkbox name=$array[0]></TD></TR>";
 	}
 }
 
