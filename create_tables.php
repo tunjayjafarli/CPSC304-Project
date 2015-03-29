@@ -65,7 +65,7 @@ echo "<br>";
 
 //Create HasShipmentMethod Table
 $sql5 = "CREATE TABLE HasShipmentMethod (issuenumber int NOT NULL UNIQUE, days int, method varchar(30), 
-	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber))";
+	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber) ON DELETE CASCADE)";
 
 //Check if created 
 if (mysqli_query($conn, $sql5)) {
@@ -77,8 +77,8 @@ echo "<br>";
 
 //Create Mailed Table 
 $sql6 = "CREATE Table Mailed(branchid int NOT NULL, issuenumber int PRIMARY KEY, deliverystatus varchar(20), receiverstatus varchar(20),
-	FOREIGN KEY (branchid) REFERENCES Branch(branchid),
-	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber))";
+	FOREIGN KEY (branchid) REFERENCES Branch(branchid) ON DELETE CASCADE,
+	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber) ON DELETE CASCADE)";
 
 //Check if created 
 if (mysqli_query($conn, $sql6)) {
@@ -90,7 +90,7 @@ echo "<br>";
 
 //Create Date_ table
 $sql7 = "CREATE Table Date_(issuenumber int PRIMARY KEY, day int NOT NULL, month varchar(10) NOT NULL, year int NOT NULL,
-	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber))";
+	FOREIGN KEY (issuenumber) REFERENCES OfficeReceived(issuenumber) ON DELETE CASCADE)";
 
 //Check if created 
 if (mysqli_query($conn, $sql7)) {
