@@ -67,31 +67,6 @@ Echo "<TR>
 		  <TD><Input type = submit name = 'Submit' value='Add to Storage' class='btn btn-success'></TD></TR>";
 Echo "</Table>";
 
-// Insert functionality
-if (isset($_POST['Submit'])) {
-	$issuenumber = $_POST['issuenumber'];
-	$branchid = $_POST['branchid'];
-
-	mysqli_query($conn, "insert into In_storage value 
-		('$issuenumber' ,'$branchid')");
-	echo "<p style=color:green> New values inserted successfully<br><br>";
-}
-
-// Delete functionality
-if (isset($_POST['Delete'])) {
-	$sql = "Select * from In_storage";
-	$packages = mysqli_query($conn, $sql);
-
-	while ($array=mysqli_fetch_array($packages)) {
-		$a = isset($_POST[$array[0]]);
-		if ($a>=1) {
-			mysqli_query($conn, "delete from In_storage where issuenumber = $array[0]");
-			echo "Deleted item number: ". $array[0];
-			echo "<br>";
-		}
-	}
-}
-
 mysqli_close($conn);
 
 echo "<a href=branch.php class='btn btn-primary'> BRANCHES </a>";
