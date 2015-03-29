@@ -1,4 +1,3 @@
-
 <form method="POST" action="branch.php"> 
 
 <?php
@@ -26,7 +25,8 @@ if (isset($_POST['Update'])) {
 	$name = $_POST['name'];
 	$location = $_POST['location'];
 
-	if (mysqli_query($conn, "update Branch set phone='$phone', name='$name', location='$location' where branchid='$branchid' ")) {
+	$sql_update = "update Branch set phone='$phone', name='$name', location='$location' where branchid='$branchid'";
+	if (mysqli_query($conn, $sql_update)) {
 		echo "<p style=color:green> Updated the values for the branch: " . $branchid;
 	} else {
 		echo "<p style=color:red> Please check that you have entered a valid branch id! <br>";
