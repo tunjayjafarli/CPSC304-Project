@@ -50,6 +50,7 @@ if(array_key_exists('insertItem', $_POST)) {
 	$itemnumber = htmlspecialchars($_POST["itemnumber"]);
 	$size = htmlspecialchars($_POST["size"]);
 	$type = htmlspecialchars($_POST["type"]);
+	if(is_numeric($itemnumber)){ 
 	$itemSql = "insert into Item (itemnumber, size, type) values ('$itemnumber', '$size', '$type')";
 	if (mysqli_multi_query($conn, $itemSql)) {
 		echo "<p style=color:green>New records created successfully";
@@ -73,6 +74,9 @@ if(array_key_exists('insertItem', $_POST)) {
 			}
 		}
 		Echo "</Table>";
+	}
+	}else{
+		echo "<p style=color:red>Item Number has to be an integer.";
 	}
 }
 ?>
