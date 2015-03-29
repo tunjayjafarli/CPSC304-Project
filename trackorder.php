@@ -83,7 +83,7 @@ Include ("header.php");
 	}
 
 	if($view == "3"){
-		$sql = "SELECT * FROM DAte_ ORDER BY issuenumber";
+		$sql = "SELECT * FROM Date_ ORDER BY issuenumber";
 
 		$loc = mysqli_query($conn, $sql);
 
