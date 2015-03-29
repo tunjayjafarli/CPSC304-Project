@@ -15,10 +15,10 @@ if (!$conn) {
 }
 ?>
 
-<h2>Add a new order</h2>
+<h2><center><p style=color:darkslateblue>Add a new order</center></h2>
 
 <form method="POST" action="addorder.php">
-	<h4><b>Item Information</b></h4>
+	<h4><b><p style=color:darkblue>Item Information</b></h4>
 	<table>
 		<tr>
 			<td><center>Item Number</center></td>
@@ -44,12 +44,14 @@ if (!$conn) {
 </TR>
 </Table>
 </form>
+<br>
 
 <?php
 if(array_key_exists('insertItem', $_POST)) {
 	$itemnumber = htmlspecialchars($_POST["itemnumber"]);
 	$size = htmlspecialchars($_POST["size"]);
 	$type = htmlspecialchars($_POST["type"]);
+	if(is_numeric($itemnumber)){ 
 	$itemSql = "insert into Item (itemnumber, size, type) values ('$itemnumber', '$size', '$type')";
 	if (mysqli_multi_query($conn, $itemSql)) {
 		echo "<p style=color:green>New records created successfully";
@@ -74,11 +76,14 @@ if(array_key_exists('insertItem', $_POST)) {
 		}
 		Echo "</Table>";
 	}
+	}else{
+		echo "<p style=color:red>Item Number has to be an integer.";
+	}
 }
 ?>
 
 <form method="POST" action="addorder.php">
-	<h4><b>Office received information</b></h4>
+	<h4><b><p style=color:darkblue>Shipment  Details</b></h4>
 	<table>
 		<tr>
 			<td><center>Issue Number</center></td>
@@ -97,6 +102,7 @@ if(array_key_exists('insertItem', $_POST)) {
 		</TR>
 	</Table>
 </form>
+<br>
 
 <?php
 if(array_key_exists('insertOfficeInfo', $_POST)){
@@ -161,7 +167,7 @@ if(array_key_exists('insertOfficeInfo', $_POST)){
 ?>
 
 <form method="POST" action="addorder.php">
-	<h4><b>Shipment Method</b></h4>
+	<h4><b><p style=color:darkblue>Shipment Method</b></h4>
 	<table>
 		<tr>
 			<td><center>Issue Number</center></td>
@@ -181,6 +187,7 @@ if(array_key_exists('insertOfficeInfo', $_POST)){
 	</TR>
 </Table>
 </form>
+<br>
 
 <?php
 if (array_key_exists('insertShipmentInfo', $_POST)) {
@@ -230,7 +237,7 @@ if (array_key_exists('insertShipmentInfo', $_POST)) {
 ?>
 
 <form method="POST" action="addorder.php">
-	<h4><b>Payment</b></h4>
+	<h4><b><p style=color:darkblue>Payment</b></h4>
 	<table>
 		<tr>
 			<td><center>Receipt Number</center></td>
@@ -265,6 +272,7 @@ if (array_key_exists('insertShipmentInfo', $_POST)) {
 	</TR>
 </Table>
 </form>
+<br>
 
 <?php
 if (array_key_exists('insertPaid', $_POST)) {
@@ -326,7 +334,7 @@ if (array_key_exists('insertPaid', $_POST)) {
 ?>
 
 <form method="POST" action="addorder.php">
-	<h4><b>Mailing information</b></h4>
+	<h4><b><p style=color:darkblue>Status information</b></h4>
 	<table>
 		<tr>
 			<td><center>Branch ID</center></td>
@@ -351,7 +359,7 @@ if (array_key_exists('insertPaid', $_POST)) {
 		</TR>
 	</Table>
 </form>
-
+<br>
 <?php
 if (array_key_exists('insertMailed', $_POST)) {
 	$branchid2 = htmlspecialchars($_POST["branchid2"]);
@@ -404,7 +412,7 @@ if (array_key_exists('insertMailed', $_POST)) {
 ?>
 
 <form method="POST" action="addorder.php">
-	<h4><b>Date (e.g 23 March 2015)</b></h4>
+	<h4><b><p style=color:darkblue> Date (e.g 23 March 2015)</b></h4>
 	<table>
 		<tr>
 			<td><center>Issue Number</center></td>
@@ -421,7 +429,7 @@ if (array_key_exists('insertMailed', $_POST)) {
 		</TR>
 	</Table>
 </form>
-
+<br>
 
 <?php
 
