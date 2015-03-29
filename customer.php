@@ -97,7 +97,7 @@ if(array_key_exists('ChangeDeliveryMethod', $_POST)){
 			inner join Mailed
 			on HasShipmentMethod.issuenumber = Mailed.issuenumber
 			set HasShipmentMethod.method = '$method',
-				HasShipmentMethod.days = HasShipmentMethod.days + $days
+			HasShipmentMethod.days = HasShipmentMethod.days + $days
 			where HasShipmentMethod.issuenumber = $issuenumber 
 			and Mailed.deliverystatus = 'Waiting'";
 			$updatePaidSql = "update Paid
