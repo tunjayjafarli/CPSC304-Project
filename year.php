@@ -1,9 +1,11 @@
-
 <link href="style.css" rel="stylesheet" type="text/css">
 <h1 style="color:red"><center>Postal Service Database</center></h1>
 <br>
 
 <?php
+
+Include("header.php");
+
 $servername = "localhost";
 $username = "root";
 $password = "";
