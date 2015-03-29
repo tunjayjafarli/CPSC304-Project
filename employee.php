@@ -10,4 +10,4 @@ include ("header.php");
 <a href=order.php class='btn btn-primary'> See Orders By Year </a> <br> <br/>
 <a href=average.php class='btn btn-primary'> Annual Budget Report </a> <br> <br/> 
 <br>
-<a href=logout.php class='btn btn-dangerr'> LOG OUT</a>
+<a href=logout.php class='btn btn-danger'> LOG OUT</a>
