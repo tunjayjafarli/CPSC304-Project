@@ -1,7 +1,7 @@
 <form method="POST" action="packages.php"> 
 
 <?php
-echo "<title>Postal Service Database</title>";
+
 Include ("header.php");
 
 $servername = "localhost";
@@ -16,7 +16,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-Echo "Packages in Storage: ";
+Echo "<b>PACKAGES IN STORAGE</b>";
 Echo "<br>";
 
 // Insert functionality
@@ -48,7 +48,7 @@ if (isset($_POST['Delete'])) {
 $sql = "Select * from In_storage";
 $packages = mysqli_query($conn, $sql);
 
-Echo "<Table class=table>";
+Echo "<Table border=1 class=table>";
 Echo "<TR><TD>Issue Number</TD>
 		  <TD>Branch ID</TD>
 		  <TD><Input type=Submit name='Delete' value='Remove from Storage' class='btn btn-danger'></TD></TR>";
