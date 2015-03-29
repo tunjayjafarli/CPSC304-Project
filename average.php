@@ -60,7 +60,7 @@ else {
 echo "<br>";
 if (mysqli_num_rows($loc) > 0) {
 	echo "<table class='table table-striped table-bordered'>
-	<TR><TD class='col-md-4'>Max Annual Profit (CAD) </TD>
+	<TR><TD class='col-md-4'>Maximum Annual Profit (CAD) </TD>
 	<TD class='col-md-4'>Year</TD></TR>";
 	while($array = mysqli_fetch_array($loc)) {
 		echo "<TR><TD class='col-md-4'> $array[0] </TD>";
