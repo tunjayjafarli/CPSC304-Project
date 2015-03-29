@@ -1,7 +1,8 @@
-
 <link href="style.css" rel="stylesheet" type="text/css">
-<br>
 <?php
+
+Include("header.php");
+
 $servername = "localhost";
 $username = "root";
 $password = "";
