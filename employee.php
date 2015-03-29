@@ -10,3 +10,6 @@ include ("header.php");
 <a href=order.php class='btn btn-primary'> See Orders By Year </a> <br> <br/> 
 <br>
 <a href=logout.php class='btn btn-danger'> LOG OUT</a>
+<?php
+include ("addorder.php");
+?>
