@@ -6,7 +6,7 @@
 	<BODY>
 		<h1 style="color:red"><center>Postal Service Database</center></h1>
 		<!-- <TABLE border=0 height=10% width=100% bgcolor="grey"> -->
-		<TABLE class="table">
+		<TABLE class="table table">
 			<TR>
 
 				<TD><a href="customer.php"> CUSTOMER </a></TD>

@@ -58,6 +58,6 @@ Echo "</Table>";
 
 mysqli_close($conn);
 
-echo "<a href=packages.php> LIST OF IN STORAGE PACKAGES </a>"; 
+echo "<a href=packages.php class='btn btn-primary'> Check Storage </a>"; 
 
 ?>
