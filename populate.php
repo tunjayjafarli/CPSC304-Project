@@ -17,7 +17,7 @@ echo "<br>";
 
 // Add record(s) to Branch table
 $sql = "INSERT INTO Branch (branchid, phone, name, location) 
-VALUES ('100', '1002223344', 'UBC', 'Vancouver')";
+VALUES ('100', '7788635112', 'UBC', 'Vancouver')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql)) {
@@ -28,7 +28,7 @@ if (mysqli_query($conn, $sql)) {
 echo "<br>";
 
 $sql1 = "INSERT INTO Branch(branchid, phone, name, location)
-VALUES ('102', '1012223344', 'Downtown', 'Vancouver DT')";
+VALUES ('102', '6046008080', 'Downtown', 'Vancouver DT')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql1)) {
@@ -39,7 +39,7 @@ if (mysqli_query($conn, $sql1)) {
 echo "<br>";
 
 $sql2 = "INSERT INTO Branch(branchid, phone, name, location)
-VALUES ('103', '1031112233', 'Burnaby', 'Burnaby')";
+VALUES ('103', '6049981212', 'Burnaby', 'Burnaby')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql2)) {
@@ -50,7 +50,7 @@ if (mysqli_query($conn, $sql2)) {
 echo "<br>";
 
 $sql3 = "INSERT INTO Branch(branchid, phone, name, location)
-VALUES ('104', '1045554433', 'Richmond', 'Richmond')";
+VALUES ('104', '7788606060', 'Richmond', 'Richmond')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql3)) {
@@ -61,7 +61,7 @@ if (mysqli_query($conn, $sql3)) {
 echo "<br>";
 
 $sql4 = "INSERT INTO Branch(branchid, phone, name, location)
-VALUES ('105', '1053334466', 'North Van', 'North Vancouver')";
+VALUES ('105', '7784565050', 'North Van', 'North Vancouver')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql4)) {
@@ -123,7 +123,7 @@ if (mysqli_query($conn, $sql9)) {
 echo "<br>";
 
 // Add record to In_storage table
-$sql10 = "INSERT INTO In_storage(itemnumber, branchid) VALUES ('1', '103')";
+$sql10 = "INSERT INTO In_storage(issuenumber, branchid) VALUES ('1', '103')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql10)) {
@@ -133,7 +133,7 @@ if (mysqli_query($conn, $sql10)) {
 }
 echo "<br>";
 
-$sql11 = "INSERT INTO In_storage(itemnumber, branchid) VALUES ('2', '103')";
+$sql11 = "INSERT INTO In_storage(issuenumber, branchid) VALUES ('2', '103')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql11)) {

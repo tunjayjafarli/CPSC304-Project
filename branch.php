@@ -18,16 +18,19 @@ if (!$conn) {
 
 Echo "LIST OF BRANCHES: ";
 
-// Insert functionality
-if (isset($_POST['Submit'])) {
+// Update functionality
+if (isset($_POST['Update'])) {
 	$branchid = $_POST['branchid'];
 	$phone = $_POST['phone'];
 	$name = $_POST['name'];
 	$location = $_POST['location'];
 
-	mysqli_query($conn, "insert into Branch value 
-		('$branchid', '$phone', '$name', '$location')");
-	echo "New values inserted successfully";
+	if (mysqli_query($conn, "update Branch set phone='$phone', name='$name', location='$location' where branchid='$branchid' ")) {
+		echo "<p style=color:green> Values updated successfully <br>";
+	} else {
+		echo "<p style=color:red> Please check that you have entered a valid branch id! <br>";
+	}
+	
 }
 
 // Select functionality
@@ -53,7 +56,7 @@ Echo "<TR>
 		  <TD><Input type = text name = 'phone'></TD>
 		  <TD><Input type = text name = 'name'></TD>
 		  <TD><Input type = text name = 'location'></TD>
-		  <TD><Input type = submit name = 'Submit'></TD></TR>";
+		  <TD><Input type = submit name = 'Update' value = 'Update' class = 'btn btn-warning'></TD></TR>";
 Echo "</Table>";
 
 mysqli_close($conn);

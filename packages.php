@@ -21,12 +21,12 @@ Echo "<br>";
 
 // Insert functionality
 if (isset($_POST['Submit'])) {
-	$itemnumber = $_POST['itemnumber'];
+	$issuenumber = $_POST['issuenumber'];
 	$branchid = $_POST['branchid'];
 
 	mysqli_query($conn, "insert into In_storage value 
-		('$itemnumber' ,'$branchid')");
-	echo "New values inserted successfully";
+		('$issuenumber' ,'$branchid')");
+	echo "<p style=color:green> New values inserted successfully<br>";
 }
 
 // Delete functionality
@@ -37,8 +37,8 @@ if (isset($_POST['Delete'])) {
 	while ($array=mysqli_fetch_array($packages)) {
 		$a = isset($_POST[$array[0]]);
 		if ($a>=1) {
-			mysqli_query($conn, "delete from In_storage where itemnumber = $array[0]");
-			echo "Deleted item number: ". $array[0];
+			mysqli_query($conn, "delete from In_storage where issuenumber = $array[0]");
+			echo "<p style=color:red> Removed the package with issue number: ". $array[0];
 			echo "<br>";
 		}
 	}
@@ -49,7 +49,7 @@ $sql = "Select * from In_storage";
 $packages = mysqli_query($conn, $sql);
 
 Echo "<Table class=table>";
-Echo "<TR><TD>Item ID</TD>
+Echo "<TR><TD>Issue Number</TD>
 		  <TD>Branch ID</TD>
 		  <TD><Input type=Submit name='Delete' value='Remove from Storage' class='btn btn-danger'></TD></TR>";
 
@@ -57,12 +57,12 @@ if (mysqli_num_rows($packages) > 0) {
 	while($array = mysqli_fetch_array($packages)) {
 		echo "<TR><TD> $array[0] </TD>";
 		echo 	 "<TD> $array[1] </TD>";
-		echo "<TD><Input type=Checkbox name=$array[0]></TD></TR>";
+		echo     "<TD><Input type=Checkbox name=$array[0]></TD></TR>";
 	}
 }
 
 Echo "<TR>
-		  <TD><Input type = text name = 'itemnumber'></TD>
+		  <TD><Input type = text name = 'issuenumber'></TD>
 		  <TD><Input type = text name = 'branchid'></TD>
 		  <TD><Input type = submit name = 'Submit' value='Add to Storage' class='btn btn-success'></TD></TR>";
 Echo "</Table>";
