@@ -14,11 +14,9 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-// Create  sql tables
-
 //Create Branch Table
-$sql = "CREATE TABLE Branch (branchid int PRIMARY KEY, phone int(10) NOT NULL, 
-	name varchar(30) NOT NULL, location varchar(30) NOT NULL)";
+$sql = "CREATE TABLE Branch (branchid int PRIMARY KEY, phone varchar(10) NOT NULL, 
+	name varchar(30) NOT NULL, location varchar(30) NOT NULL, CHECK (branchid>0))";
 
 //Check if created 
 if (mysqli_query($conn, $sql)) {
@@ -40,7 +38,7 @@ if (mysqli_query($conn, $sql1)) {
 echo "<br>";
 
 //Create In_storage Table
-$sql2 = "CREATE TABLE In_storage (itemnumber int PRIMARY key, branchid int NOT NULL, 
+$sql2 = "CREATE TABLE In_storage (issuenumber int PRIMARY key, branchid int NOT NULL, 
 	FOREIGN KEY (branchid) REFERENCES Branch(branchid) ON DELETE CASCADE)";
 
 //Check if created 
