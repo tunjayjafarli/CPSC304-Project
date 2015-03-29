@@ -1,18 +1,11 @@
+<?php
+Include ("header.php");
+?>
 
-<link href="style.css" rel="stylesheet" type="text/css">
-<h1 style="color:red"><center>Postal Service Database</center></h1>
 <br>
 
 <br>
-<!-- <form method="POST" action="average.php"> 
-	<p style=color:purple>
-		<br>	Enter a different year to see the number of orders received in that year:<br>
-	</p> 
-	<input type="text" name="year">
-	<input type="submit" name="GetInfo" class='btn btn-primary'>
-</form>
-<br> -->
-<a href="employee.php"> Go back to EMPLOYEE</a>
+
 
 <?php
 $servername = "localhost";

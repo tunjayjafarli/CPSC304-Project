@@ -1,5 +1,4 @@
 <link href="style.css" rel="stylesheet" type="text/css">
-<h1 style="color:red"><center>Postal Service Database</center></h1>
 <br>
 
 <?php
@@ -28,7 +27,11 @@ WHERE Date_.year=$year GROUP BY branchid";
 
 $loc = mysqli_query($conn, $sql);
 
-//Display it as a table
+//Turn off error reporting from mysql
+error_reporting(0);
+
+
+//Display the result as a table
 if (mysqli_num_rows($loc) > 0) {
 	echo "<table class='table table-striped table-bordered'>
 	<TR><TD>Branch ID</TD>
@@ -43,9 +46,11 @@ else {
 	echo "<p style=color:red> No orders were made in that year";
 }
 
+//close connection
 mysqli_close($conn);
 
 ?>
+
 <br>
 <form method="POST" action="year.php"> 
 	<p style=color:purple>

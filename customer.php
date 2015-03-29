@@ -2,10 +2,10 @@
 include ("header.php");
 ?>
 
-<h2>Delivery Status</h2>
+<h2><p style=color:darkblue> Delivery Status</h2>
 <form method="POST" action="customer.php"> 
 	Issue Number: <input type="text" name="issuenumber">
-	<input type="submit" name="GetInfo">
+	<input type="submit" name="GetInfo" class="btn btn-default">
 </form>
 
 <?php
@@ -56,14 +56,14 @@ if(array_key_exists('GetInfo', $_POST)){
 }
 ?>
 
-<h2> Change Delivery Method </h2>
+<h2><p style=color:darkblue> Change Delivery Method </h2>
 <form method="POST" action="customer.php"> 
 	Issue Number: <input type="text" name="issuenumber"><br>
 	Card Number: <input type="text" name="cardnumber"><br>
 	Holder Name: <input type="text" name="holdername"><br>
 	<input type="radio" name="method" value="regular" checked>Regular
 	<input type="radio" name="method" value="express">Express
-	<input type="submit" name="ChangeDeliveryMethod">
+	<input type="submit" name="ChangeDeliveryMethod" class='btn btn-default'>
 </form>
 
 <?php

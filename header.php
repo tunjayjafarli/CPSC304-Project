@@ -2,7 +2,7 @@
 	<head>
 		<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
-	<BODY bgcolor=#FAEBD7>
+	<BODY style="background-color:MintCream ">
 		<h1 style="color:red"><center>Postal Service Database</center></h1>
 		<TABLE class="table table">
 			<TR>
