@@ -69,11 +69,11 @@ Echo "</Table>";
 
 // Insert functionality
 if (isset($_POST['Submit'])) {
-	$itemnumber = $_POST['itemnumber'];
+	$issuenumber = $_POST['issuenumber'];
 	$branchid = $_POST['branchid'];
 
 	mysqli_query($conn, "insert into In_storage value 
-		('$itemnumber' ,'$branchid')");
+		('$issuenumber' ,'$branchid')");
 	echo "<p style=color:green> New values inserted successfully<br><br>";
 }
 
@@ -85,7 +85,7 @@ if (isset($_POST['Delete'])) {
 	while ($array=mysqli_fetch_array($packages)) {
 		$a = isset($_POST[$array[0]]);
 		if ($a>=1) {
-			mysqli_query($conn, "delete from In_storage where itemnumber = $array[0]");
+			mysqli_query($conn, "delete from In_storage where issuenumber = $array[0]");
 			echo "Deleted item number: ". $array[0];
 			echo "<br>";
 		}
