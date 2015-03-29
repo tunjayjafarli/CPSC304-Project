@@ -37,7 +37,7 @@ if(array_key_exists('GetInfo', $_POST)){
 		$sql = "select Mailed.issuenumber, 
 		Mailed.deliverystatus, 
 		Mailed.receiverstatus, 
-		HasShipmentMethod.duration
+		HasShipmentMethod.days
 		from Mailed
 		inner join HasShipmentMethod
 		on Mailed.issuenumber = HasShipmentMethod.issuenumber
@@ -52,7 +52,7 @@ if(array_key_exists('GetInfo', $_POST)){
 					Echo "<TR><TD>Issue Number</TD>
 					<TD>Delivery Status</TD>
 					<TD>Reciever Status</TD>
-					<TD>Duration</TD> </TR>";
+					<TD>Days</TD> </TR>";
 					echo "<TR><TD> $array[0] </TD>";
 					echo 	 "<TD> $array[1] </TD>";
 					echo 	 "<TD> $array[2] </TD>";
@@ -89,12 +89,16 @@ if(array_key_exists('ChangeDeliveryMethod', $_POST)){
 	$holdername = htmlspecialchars($_POST["holdername"]);
 	$method = htmlspecialchars($_POST["method"]);
 	$amount = 0;
+	$days = 0;
 	if(strcmp ($method, 'express') == 0){
 		$amount = 30;
+		$days = 5;
 	}
 	else{
 		$amount = -30;
+		$days = -5;
 	}
+	
 
 	if(is_numeric($issuenumber) && is_numeric($cardnumber)){
 
@@ -111,7 +115,8 @@ if(array_key_exists('ChangeDeliveryMethod', $_POST)){
 			$updateShipmentSql = "update HasShipmentMethod
 			inner join Mailed
 			on HasShipmentMethod.issuenumber = Mailed.issuenumber
-			set HasShipmentMethod.method = '$method'
+			set HasShipmentMethod.method = '$method',
+				HasShipmentMethod.days = HasShipmentMethod.days + $days
 			where HasShipmentMethod.issuenumber = $issuenumber 
 			and Mailed.deliverystatus = 'Waiting'";
 
@@ -129,7 +134,8 @@ if(array_key_exists('ChangeDeliveryMethod', $_POST)){
 			$resultPaid = mysqli_query($conn, $updatePaidSql);
 			echo "Shipment was changed successfully.";
 
-			$tablesql = "select HasShipmentMethod.issuenumber, 
+			$tablesql = "select HasShipmentMethod.issuenumber,
+			HasShipmentMethod.days, 
 			HasShipmentMethod.method, 
 			Paid.amount
 			from HasShipmentMethod
@@ -141,13 +147,15 @@ if(array_key_exists('ChangeDeliveryMethod', $_POST)){
 
 				Echo "<Table  class=table>";
 				Echo "<TR><TD>Issue Number</TD>
+				<TD>Days</TD>
 				<TD>Method</TD>
 				<TD>Amount</TD></TR>";
 				if (mysqli_num_rows($resulttable) > 0) {
 					while($array = mysqli_fetch_array($resulttable)) {
 						echo "<TR><TD> $array[0] </TD>";
 						echo 	 "<TD> $array[1] </TD>";
-						echo 	 "<TD> $array[2] </TD></TR>";
+						echo 	 "<TD> $array[2] </TD>";
+						echo 	 "<TD> $array[3] </TD></TR>";
 					}
 				}
 				Echo "</Table>";
