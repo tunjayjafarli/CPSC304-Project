@@ -4,14 +4,14 @@
 <br>
 
 <br>
-<form method="POST" action="average.php"> 
+<!-- <form method="POST" action="average.php"> 
 	<p style=color:purple>
 		<br>	Enter a different year to see the number of orders received in that year:<br>
 	</p> 
 	<input type="text" name="year">
 	<input type="submit" name="GetInfo" class='btn btn-primary'>
 </form>
-<br>
+<br> -->
 <a href="employee.php"> Go back to EMPLOYEE</a>
 
 <?php
@@ -28,23 +28,43 @@ if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }
 
-$year=$_POST["year"]; 
 
 // Select trackingnumber, destination and type from tables Officereceived and Item
-$sql = "SELECT SUM(Paid.amount), Date_.year AS annualprofit
-FROM (Paid INNER JOIN Date_ ON Paid.issuenumber=Date_.issuenumber)
+$sql = " SELECT MAX(annualprofit), year FROM (SELECT SUM(Paid.amount) as annualprofit, Date_.year 
+	FROM (Paid INNER JOIN Date_ ON Paid.issuenumber=Date_.issuenumber)
+	GROUP BY year) as HighestProfit";
+
+$sql1 = "SELECT SUM(Paid.amount) as annualprofit, Date_.year 
+FROM (Paid INNER JOIN Date_ on Paid.issuenumber=Date_.issuenumber)
 GROUP BY year";
 
 $loc = mysqli_query($conn, $sql);
+$loc1 = mysqli_query($conn, $sql1);
+
 
 //Display it as a table
+
+if (mysqli_num_rows($loc1) > 0) {
+	echo "<table class='table table-striped table-bordered'>
+	<TR><TD class='col-md-4'>Annual Profit (CAD) </TD>
+	<TD class='col-md-4'>Year</TD></TR>";
+	while($array = mysqli_fetch_array($loc1)) {
+		echo "<TR><TD class='col-md-4'> $array[0] </TD>";
+		echo "<TD class='col-md-4'> $array[1] </TD></TR>";
+	}
+	echo "</table>";		
+}
+else {
+	echo "<p style=color:red> No orders were made in that year";
+}
+echo "<br>";
 if (mysqli_num_rows($loc) > 0) {
-	echo "<table class='table table-striped table-bordered table-striped'>
-	<TR><TD>Annual Profit (CAD) </TD>
-	<TD>Year</TD></TR>";
+	echo "<table class='table table-striped table-bordered'>
+	<TR><TD class='col-md-4'>Max Annual Profit (CAD) </TD>
+	<TD class='col-md-4'>Year</TD></TR>";
 	while($array = mysqli_fetch_array($loc)) {
-		echo "<TR><TD> $array[0] </TD>";
-		echo "<TD> $array[1] </TD></TR>";
+		echo "<TR><TD class='col-md-4'> $array[0] </TD>";
+		echo "<TD class='col-md-4'> $array[1] </TD></TR>";
 	}
 	echo "</table>";		
 }

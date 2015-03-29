@@ -36,8 +36,8 @@ if(array_key_exists('GetInfo', $_POST)){
 
 		$sql = "select Mailed.issuenumber, 
 		Mailed.deliverystatus, 
-		Mailed.receiverstatus, 
-		HasShipmentMethod.duration
+		Mailed.receiverstatus,
+		HasShipmentMethod.days
 		from Mailed
 		inner join HasShipmentMethod
 		on Mailed.issuenumber = HasShipmentMethod.issuenumber
