@@ -26,7 +26,7 @@ if (isset($_POST['Update'])) {
 	$location = $_POST['location'];
 
 	$sql_update = "update Branch set phone='$phone', name='$name', location='$location' where branchid='$branchid'";
-	if (mysqli_query($conn, $sql_update)) {
+	if (mysqli_query($conn, $sql_update) & $branchid>0) {
 		echo "<p style=color:green> Updated the values for the branch: " . $branchid;
 	} else {
 		echo "<p style=color:red> Please check that you have entered a valid branch id! <br>";
