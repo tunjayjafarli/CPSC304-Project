@@ -24,9 +24,13 @@ if (isset($_POST['Submit'])) {
 	$issuenumber = $_POST['issuenumber'];
 	$branchid = $_POST['branchid'];
 
-	mysqli_query($conn, "insert into In_storage value 
-		('$issuenumber' ,'$branchid')");
-	echo "<p style=color:green> New values inserted successfully<br>";
+	$sql = "insert into In_storage value ('$issuenumber' ,'$branchid')";
+	if (mysqli_query($conn, $sql) & is_numeric($issuenumber) & is_numeric($branchid)) {
+		echo "<p style=color:green> New values inserted successfully<br>";
+	} else {
+		echo "<p style=color:red> Please check that you have entered a valid issue number and branch id! <br>";
+	}
+	
 }
 
 // Delete functionality
