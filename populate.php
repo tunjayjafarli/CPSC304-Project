@@ -123,7 +123,7 @@ if (mysqli_query($conn, $sql9)) {
 echo "<br>";
 
 // Add record to In_storage table
-$sql10 = "INSERT INTO In_storage(issuenumber, branchid) VALUES ('1', '103')";
+$sql10 = "INSERT INTO In_storage(issuenumber, branchid) VALUES ('11', '103')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql10)) {
@@ -133,7 +133,7 @@ if (mysqli_query($conn, $sql10)) {
 }
 echo "<br>";
 
-$sql11 = "INSERT INTO In_storage(issuenumber, branchid) VALUES ('2', '103')";
+$sql11 = "INSERT INTO In_storage(issuenumber, branchid) VALUES ('55', '103')";
 
 // Check if added successfully
 if (mysqli_query($conn, $sql11)) {
